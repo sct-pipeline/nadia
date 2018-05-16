@@ -1,13 +1,9 @@
 # nadia
-Pipeline for computing MT and DTI metrics using various vertebral levels
 
-## Introduction
-
-This is an analysis pipeline to output the following metrics:
-- MT1/MT0 —> MTR
-- MT1 —> CSA
-- DWI —> FA, RD
-Uses a txt file for selecting vertebral level
+Pipeline for computing MT and DTI metrics vertebral levels specified in a text file. The following metrics are output:
+- MTR (from MT data)
+- CSA (from MT1 data)
+- FA, RD (from DWI data)
 
 ## Dependencies
 
@@ -36,9 +32,18 @@ data
 
 - Download (or `git clone`) this repository.
 - Edit [parameters.sh](./parameters.sh) according to your needs, then save the file.
-- **Manual Labeling**: `./run_process.sh 1_label_data.sh`: Click at the posterior tip of two inter-vertebral discs. The discs are indicated on the left of the window. For example, label 3 corresponds to disc C2-C3
-- **Process data:** `./run_process.sh 2_process_data.sh`
-- **Compute metrics:** `./run_process.sh 3_compute_metrics.sh`
+- **Manual Labeling:** Click at the posterior tip of two inter-vertebral discs. The discs are indicated on the left of the window. For example, label 3 corresponds to disc C2-C3.
+~~~
+./run_process.sh 1_label_data.sh
+~~~
+- **Process data:** Does most of the processing (automatic).
+~~~
+./run_process.sh 2_process_data.sh
+~~~
+- **Compute metrics:** Extract quantitative metrics (automatic).
+~~~
+./run_process.sh 3_compute_metrics.sh
+~~~
 
 ## Contributors
 
