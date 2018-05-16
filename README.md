@@ -36,7 +36,7 @@ data
 ~~~
 ./run_process.sh 1_label_data.sh
 ~~~
-- **Process data:** Does most of the processing (automatic).
+- **Process data:** Does most of the processing (automatic). Once completed, check results of the automatic segmentations by opening the quality control (QC) report under `${PATH_QC}/index.html`, and correct the segmentation if needed. To correct a segmentation, open it using e.g. fsleyes, edit the binary mask, then save it by adding the suffix `_manual`. E.g. `t2_seg.nii.gz` --> `t2_seg_manual.nii.gz`.
 ~~~
 ./run_process.sh 2_process_data.sh
 ~~~
